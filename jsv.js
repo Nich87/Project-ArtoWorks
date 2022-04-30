@@ -1,0 +1,10 @@
+const data = [[],[]];
+const res = [];
+for (let i = 0; i < data[0].length; i++) res[i] = data[0][i] + "," + data[1][i];
+var csv = "data:text/csv;charset=utf-8," + res.join("\n");
+const encoded = encodeURI(csv);
+const link = document.createElement("a");
+link.setAttribute("href", encoded);
+link.setAttribute("download", "out.csv");
+document.body.appendChild(link);
+link.click();
