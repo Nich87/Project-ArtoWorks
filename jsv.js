@@ -5,11 +5,18 @@ const urls = [];
 const data = [titles, urls];
 const res = [];
 
+const LINK = false;
+
 const main = () => {
     for (title of els) titles.push(title.outerText.split(' ')[0]);
     for (url of els) urls.push(url.firstElementChild.href);
+    if(LINK){
+        for (let i = 0; i < data[0].length; i++) res[i] = `=HYPERLINK("${data[1][i]}","${data[0][i]}")`;
+        return;
+    }
     for (let i = 0; i < data[0].length; i++) res[i] = data[0][i] + "," + data[1][i];
 }
+
 
 const create = () => {
     const csv = "data:text/csv;charset=utf-8," + res.join("\n");
