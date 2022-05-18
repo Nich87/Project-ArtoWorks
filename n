@@ -1,1 +1,23 @@
 VcgP3O8_JGw
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<div class="video-container"> 
+	<div id="videoPlay" //動画の呼び出し要素
+		data-property="{
+			videoURL: '●●●●', //動画ID、またはURL
+			containment: '.video-container', //動画を囲う親要素を指定
+			mute: true, //音声ミュート
+			loop: true, //ループ再生
+			autoPlay: true, //自動再生
+			startAt: 30, //動画を何秒の地点から再生するか
+			showControls: false, //動画のコントロールナビゲーションを非表示
+			showYTLogo: false //Youtubeロゴや動画URLへのリンクを非表示
+		}">
+	</div>
+</div>
+<script>
+	$(function() {
+		$('#videoPlay').YTPlayer(); //動画の呼び出し部分に指定したID
+	});
+</script>
